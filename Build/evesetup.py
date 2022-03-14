@@ -39,7 +39,7 @@ def query_api(url, time_stamp, cookie):
         'Content-type': 'application/json'
     }
     #api_url = 'https://10.10.21.28/api/'
-    api_url = 'https://10.10.21.100/api/'
+    api_url = 'https://192.168.1.100/api/'
     full_url = api_url + url
     logging.info(f"URL:{full_url}")
     nodes = requests.get(url=full_url, headers=headers,

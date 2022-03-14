@@ -11,7 +11,8 @@ logging.basicConfig(level=logging.DEBUG,
 headers = {"Accept": "application/yang-data+json",
            "Content-Type": "application/yang-data+json"}
 
-ip_address = ['10.10.21.121', '10.10.21.174']
+#ip_address = ['10.10.21.121', '10.10.21.174']
+ip_address = ['192.168.143', '192.168.1.44']
 base_url = "http://{}/restconf/data"
 find_routerid_url = 'Cisco-IOS-XE-ospf-oper:ospf-oper-data/ospf-state/ospf-instance'
 headers = {'Accept': 'application/yang-data+json',
