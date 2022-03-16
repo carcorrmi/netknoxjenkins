@@ -8,7 +8,7 @@
         ip_address: 22.22.22.22/32
     
     interfaces:
-      - name: GigabitEthernet1
+      - name: GigabitEthernet4
         ip_address: 10.10.21.155/24
       - name: GigabitEthernet2
         ip_address: 172.16.16.2/30

@@ -16,6 +16,10 @@ def api_login():
     data = {"username": "admin", "password": "eve", "html5": 0}
     #url = 'https://10.10.21.28/api/auth/login'
     url = 'https://192.168.1.100/api/auth/login'
+    #import ipdb
+    #ipdb.set_trace()
+
+
     login = requests.post(url=url, data=json.dumps(data), verify=False)
     if login.status_code == 200:
         cookies = login.cookies
@@ -79,6 +83,8 @@ def main():
             response = query_api(url, time_stamp, cookie)
             print(response)
             print()
+            #import ipdb
+            #ipdb.set_trace()
     elif args.topo and args.stop:
         url = 'labs/{}/nodes'.format(args.topo)
         data = query_api(url, time_stamp, cookie)

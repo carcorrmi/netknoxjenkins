@@ -12,7 +12,7 @@ headers = {"Accept": "application/yang-data+json",
            "Content-Type": "application/yang-data+json"}
 
 #ip_address = ['10.10.21.121', '10.10.21.174']
-ip_address = ['192.168.143', '192.168.1.44']
+ip_address = ['192.168.1.41','192.168.1.42']
 base_url = "http://{}/restconf/data"
 find_routerid_url = 'Cisco-IOS-XE-ospf-oper:ospf-oper-data/ospf-state/ospf-instance'
 headers = {'Accept': 'application/yang-data+json',
@@ -24,13 +24,11 @@ def test_ospf():
         print(f"Starting with device {ip}")
         logging.info(f"Starting with device {ip}")
         url = f"https://{ip}/restconf/data/Cisco-IOS-XE-ospf-oper:ospf-oper-data/ospf-state/ospf-instance"
-
         routerid_resp = requests.get(
-            url=url, auth=('cisco', 'cisco'), headers=headers, verify=False)
+            url=url, auth=('cisco','cisco'), headers=headers, verify=False)
         logging.info(routerid_resp.status_code)
         logging.info(routerid_resp.text)
-        router_id = json.loads(routerid_resp.text)[
-            "Cisco-IOS-XE-ospf-oper:ospf-instance"][0]['router-id']
+        router_id = json.loads(routerid_resp.text)["Cisco-IOS-XE-ospf-oper:ospf-instance"][0]["router-id"]
         print(f"Retrieved router-id {router_id} for host {ip}")
         new_url = (
             f"{url}=address-family-ipv4,{router_id}/ospf-area=0/ospf-interface/")
