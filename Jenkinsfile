@@ -14,11 +14,6 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
-      steps {
-        sh 'bash $WORKSPACE/Deploy/deployer.sh'
-      }
-    }
 
   }
 }
