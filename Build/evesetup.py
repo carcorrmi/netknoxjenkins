@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 def api_login():
     data = {"username": "admin", "password": "eve", "html5": 0}
-    #url = 'https://10.10.21.28/api/auth/login'
+
     url = 'https://192.168.1.100/api/auth/login'
     #import ipdb
     #ipdb.set_trace()
@@ -37,12 +37,12 @@ def query_api(url, time_stamp, cookie):
         'DNT': '1',
         'X-Requested-With': 'XMLHttpRequest',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
-        #'Referer': 'https://10.10.21.28/legacy/',
+       
         'Referer': 'https://192.168.1.100/legacy/',
         'Accept-Language': 'en-US,en;q=0.9',
         'Content-type': 'application/json'
     }
-    #api_url = 'https://10.10.21.28/api/'
+   
     api_url = 'https://192.168.1.100/api/'
     full_url = api_url + url
     logging.info(f"URL:{full_url}")
